@@ -8,7 +8,8 @@ import cn.codingxiaxw.enums.SeckillStatEnum;
 import cn.codingxiaxw.exception.RepeatKillException;
 import cn.codingxiaxw.exception.SeckillCloseException;
 import cn.codingxiaxw.service.SeckillService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
@@ -23,6 +24,9 @@ import java.util.List;
 @Component
 @RequestMapping("/seckill")//url:模块/资源/{}/细分  http://localhost:8080/seckill/list
 public class SeckillController {
+   private static Logger logger = LoggerFactory.getLogger(SeckillController.class);
+    // private static Logger logger = Logger.getLogger(SeckillController.class);
+
     @Autowired
     private SeckillService seckillService;
 
@@ -36,7 +40,9 @@ public class SeckillController {
     }
 
     @RequestMapping(value = "/test")
-    public String test() {
+    public String test(Model model) {
+        model.addAttribute("hai","(｡･∀･)ﾉﾞ嗨");
+        logger.info("************* 进入测试+" + new Date() + " **************");
         return "test";
     }
 

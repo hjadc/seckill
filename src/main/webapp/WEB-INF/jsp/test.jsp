@@ -7,6 +7,9 @@
     <%@include file="common/head.jsp" %>
 </head>
 <body>
+<tr>
+    <td><h3>${hai}</h3></td>
+</tr>
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading text-center">
