@@ -2,6 +2,7 @@ package cn.codingxiaxw.service;
 
 import cn.codingxiaxw.dto.Exposer;
 import cn.codingxiaxw.dto.SeckillExecution;
+import cn.codingxiaxw.entity.Department;
 import cn.codingxiaxw.entity.Seckill;
 import cn.codingxiaxw.exception.RepeatKillException;
 import cn.codingxiaxw.exception.SeckillCloseException;
@@ -48,4 +49,6 @@ public interface SeckillService {
      */
     SeckillExecution executeSeckill(long seckillId,long userPhone,String md5)
             throws SeckillException,RepeatKillException,SeckillCloseException;
+
+    List<Department> getTest();
 }

@@ -3,6 +3,7 @@ package cn.codingxiaxw.web;
 import cn.codingxiaxw.dto.Exposer;
 import cn.codingxiaxw.dto.SeckillExecution;
 import cn.codingxiaxw.dto.SeckillResult;
+import cn.codingxiaxw.entity.Department;
 import cn.codingxiaxw.entity.Seckill;
 import cn.codingxiaxw.enums.SeckillStatEnum;
 import cn.codingxiaxw.exception.RepeatKillException;
@@ -40,10 +41,13 @@ public class SeckillController {
     }
 
     @RequestMapping(value = "/test")
+    @ResponseBody
     public String test(Model model) {
         model.addAttribute("hai","(｡･∀･)ﾉﾞ嗨");
         logger.info("************* 进入测试+" + new Date() + " **************");
-        return "test";
+        List<Department> test = seckillService.getTest();
+        logger.info("************* 测试结束: " + test.toString() + " **************");
+        return test.toString();
     }
 
     @RequestMapping(value = "/{seckillId}/detail", method = RequestMethod.GET)

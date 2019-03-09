@@ -1,8 +1,8 @@
 package cn.codingxiaxw.dao;
 
+import cn.codingxiaxw.entity.Department;
 import cn.codingxiaxw.entity.Seckill;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Date;
 import java.util.List;
@@ -36,6 +36,6 @@ public interface SeckillDao
      */
     List<Seckill> queryAll(@Param("offset") int offset,@Param("limit") int limit);
 
-
+    public List<Department> getTest();
 
 }

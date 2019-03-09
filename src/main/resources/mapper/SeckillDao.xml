@@ -28,5 +28,9 @@
         limit #{offset},#{limit}
     </select>
 
+    <select id="getTest" resultType="cn.codingxiaxw.entity.Department">
+        SELECT *
+        FROM department
+    </select>
 
 </mapper>

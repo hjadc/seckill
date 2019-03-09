@@ -5,6 +5,7 @@ import cn.codingxiaxw.dao.SuccessKilledDao;
 import cn.codingxiaxw.dao.cache.RedisDao;
 import cn.codingxiaxw.dto.Exposer;
 import cn.codingxiaxw.dto.SeckillExecution;
+import cn.codingxiaxw.entity.Department;
 import cn.codingxiaxw.entity.Seckill;
 import cn.codingxiaxw.entity.SuccessKilled;
 import cn.codingxiaxw.enums.SeckillStatEnum;
@@ -19,7 +20,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
-import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
@@ -151,6 +151,10 @@ public class SeckillServiceImpl implements SeckillService
             throw new SeckillException("seckill inner error :"+e.getMessage());
         }
 
+    }
+
+    public List<Department> getTest(){
+        return seckillDao.getTest();
     }
 }
 
