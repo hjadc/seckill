@@ -46,7 +46,7 @@ public class SeckillController {
         model.addAttribute("hai","(｡･∀･)ﾉﾞ嗨");
         logger.info("************* 进入测试+" + new Date() + " **************");
         List<Department> test = seckillService.getTest();
-        logger.info("************* 测试结束: " + test.toString() + " **************");
+        logger.info("************* 1测试结束: " + test.toString() + " **************");
         return test.toString();
     }
 
