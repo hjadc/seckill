@@ -21,7 +21,7 @@ public class Test1 {
     );
 
     /**
-     * 策略设计模式
+     * 优化方式一:策略设计模式
      */
     @Test
     public void test1() {
@@ -36,6 +36,42 @@ public class Test1 {
         for (Employee employee : employees2) {
             System.out.println(employee);
         }
+
+    }
+
+    /**
+     * 优化方式二:匿名内部类
+     */
+    @Test
+    public void test2() {
+        List<Employee> employees = filterEmployee(this.employees, new MyPredicate<Employee>() {
+            @Override
+            public boolean filter(Employee employee) {
+                return employee.getSalary() <= 5000;
+            }
+        });
+
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+    }
+
+    /**
+     * 优化方式三: Lambda表达式
+     */
+    @Test
+    public void test3() {
+        List<Employee> employees = filterEmployee(this.employees, (e) -> e.getSalary() <= 5000);
+        employees.forEach(System.out::println);
+
+    }
+
+    /**
+     * 优化方式四: Stream API
+     */
+    @Test
+    public void test4() {
+        employees.stream().filter((e) -> e.getSalary() >= 5000).forEach(System.out::println);
 
     }
 
